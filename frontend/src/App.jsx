@@ -11,6 +11,9 @@ import Logout from "./components/LogoutUser";
 import CreateQuestion from "./components/CreateQuestion";
 import ListQuizzes from "./components/ListQuizzes";
 import Leaderboard from "./components/Leaderboard";
+import EditQuiz from "./components/EditQuiz";
+import CreateQuiz from "./components/CreateQuiz";
+import AttemptQuiz from "./components/AttemptQuiz";
 
 
 
@@ -31,6 +34,9 @@ function App() {
         <Route path="/createQuestion" element={<CreateQuestion />} />
         <Route path="/listQuizzes" element={<ListQuizzes />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/edit/:quizName" element={<EditQuiz />} />
+        <Route path="/createQuiz" element={<CreateQuiz />} />
+        <Route path="/attemptQuiz/:name" element={<AttemptQuiz />} /> 
          
       </Routes>
     </>

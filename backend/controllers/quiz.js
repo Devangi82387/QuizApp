@@ -33,3 +33,31 @@ export const genreIndexer = async (req, res) => {
   }
   res.json(rows);
 };
+
+export const updateQuiz = async (req, res) => {
+  const { genre, mfc, mfi, mfu } = req.body;
+  const quizName = req.params.name;
+
+  const [result] = await db.query(
+    `UPDATE quizzes
+     SET genre = ?, mfc = ?, mfi = ?, mfu = ?
+     WHERE name = ?`,
+    [genre, mfc, mfi, mfu, quizName]
+  );
+
+  // if no row updated → quiz not found
+  if (result.affectedRows === 0) {
+    return res.sendStatus(404);
+  }
+
+  // return updated quiz
+  const [[updatedQuiz]] = await db.query(
+    "SELECT * FROM quizzes WHERE name=?",
+    [quizName]
+  );
+
+  res.json({
+    message: "Quiz updated successfully",
+    quiz: updatedQuiz,
+  });
+};

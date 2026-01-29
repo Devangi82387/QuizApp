@@ -3,25 +3,42 @@ import db from "../config/db.js";
 
 export const createQuestion = async (req, res) => {
   const q = req.body;
-  const correct =
-    q.correctA + q.correctB + q.correctC + q.correctD;
 
-  if (!q.question || correct === 0) return res.sendStatus(404);
+  // convert boolean → number
+  const correctA = q.correcta ? 1 : 0;
+  const correctB = q.correctb ? 1 : 0;
+  const correctC = q.correctc ? 1 : 0;
+  const correctD = q.correctd ? 1 : 0;
+
+  const correctCount =
+    correctA + correctB + correctC + correctD;
+
+  // validations
+  if (!q.question || correctCount === 0) {
+    return res.status(400).json({ message: "Invalid question data" });
+  }
 
   await db.query(
     `INSERT INTO questions
-     (question,type,optionA,optionB,optionC,optionD,
-      correctA,correctB,correctC,correctD,quizName)
-     VALUES (?,?,?,?,?,?,?,?,?,?,?)`,
+     (question, type, optionA, optionB, optionC, optionD,
+      correctA, correctB, correctC, correctD, quizName)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
-      q.question, q.type, q.optionA, q.optionB,
-      q.optionC, q.optionD,
-      q.correctA, q.correctB,
-      q.correctC, q.correctD,
-      q.quizName
+      q.question,
+      q.type,
+      q.optionA,
+      q.optionB,
+      q.optionC,
+      q.optionD,
+      correctA,
+      correctB,
+      correctC,
+      correctD,
+      q.quizName   
     ]
   );
-  res.json(q);
+
+  res.status(201).json({ message: "Question added successfully" });
 };
 
 export const getQuestions = async (req, res) => {
