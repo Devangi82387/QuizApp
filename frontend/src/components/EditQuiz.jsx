@@ -58,7 +58,7 @@ const EditQuiz = () => {
         {data && data.length > 0 ? (
           data.map((quiz) => (
             <li key={quiz.name}>
-              <Link to={`/quiz/edit/${quiz.name}`}>{quiz.name}</Link>
+              <Link to={`/edit/${quiz.name}`}>{quiz.name}</Link>
             </li>
           ))
         ) : (

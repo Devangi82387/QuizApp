@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../api/axios"; // optional, if you have a logout endpoint
 
 const Logout = () => {
   const [message, setMessage] = useState("");

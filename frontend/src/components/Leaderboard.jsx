@@ -64,7 +64,7 @@ const Leaderboard = () => {
             <tbody>
               {scores.map((item, idx) => (
                 <tr key={idx}>
-                  <td>{item.quizPlayed}</td>
+                  <td>{item.quiz}</td>
                   <td>{item.correct}</td>
                   <td>{item.incorrect}</td>
                   <td>{item.unanswered}</td>

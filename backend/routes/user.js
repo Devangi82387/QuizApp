@@ -17,7 +17,7 @@ router.post("/register", register);
 router.post("/login", login);
 router.get("/users/:username", getUser);
 router.get("/indexUsers", getUsers);
-router.get("/delUser/:username", deleteUser);
+router.delete("/delUser/:username", deleteUser);
 router.get("/leaderboard", leaderboard);
 router.get("/reduceLifeline/:username", reduceLifeline);
 router.get("/getLifelines/:username", getLifelines);

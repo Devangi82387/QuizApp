@@ -50,13 +50,25 @@ export const getQuestions = async (req, res) => {
 };
 
 export const getOneQuestion = async (req, res) => {
-  const [[row]] = await db.query(
-    "SELECT * FROM questions WHERE id=?",
-    [req.params.id]
-  );
-  if (!row) return res.sendStatus(404);
-  res.json(row);
+  try {
+    const { id } = req.params;
+
+    const [rows] = await db.query(
+      "SELECT * FROM questions WHERE id = ?",
+      [id]
+    );
+
+    if (!rows || rows.length === 0) {
+      return res.status(404).json({ message: "Question not found" });
+    }
+
+    res.json(rows[0]);
+  } catch (err) {
+    console.error("getOneQuestion error:", err);
+    res.status(500).json({ message: "Server error" });
+  }
 };
+
 
 export const deleteQuestion = async (req, res) => {
   await db.query(

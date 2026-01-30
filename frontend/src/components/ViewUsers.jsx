@@ -32,7 +32,7 @@ const ViewUsers = () => {
 
   const deleteUser = async (username) => {
     try {
-      await api.delete(`user//delUser/${username}`);
+      await api.delete(`user/delUser/${username}`);
       fetchUsers(); // refresh list
     } catch (err) {
       alert("Failed to delete user");
