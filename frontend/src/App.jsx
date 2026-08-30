@@ -22,28 +22,30 @@ import EditQuestion from "./components/editQuestion";
 
 function App() {
   return (
-    <>
-    
-      <Navbar />   
+    <div className="app">
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/adminPanel" element={<AdminPanel />} />
-        <Route path="/viewUsers" element={<ViewUsers />} />
-        <Route path="/logout" element={<Logout />} /> 
-        <Route path="/createQuestion" element={<CreateQuestion />} />
-        <Route path="/listQuizzes" element={<ListQuizzes />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
-        <Route path="/edit/:quizName" element={<Editor />} />
-        <Route path="/createQuiz" element={<CreateQuiz />} />
-        <Route path="/attemptQuiz/:name" element={<AttemptQuiz />} /> 
-        <Route path="/editQuiz" element={<EditQuiz />} />
-        <Route path="/editQuestion/:id" element={<EditQuestion />} />
-         
-      </Routes>
-    </>
+      <Navbar />
+
+      <main className="app-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/adminPanel" element={<AdminPanel />} />
+          <Route path="/viewUsers" element={<ViewUsers />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/createQuestion" element={<CreateQuestion />} />
+          <Route path="/listQuizzes" element={<ListQuizzes />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/edit/:quizName" element={<Editor />} />
+          <Route path="/createQuiz" element={<CreateQuiz />} />
+          <Route path="/attemptQuiz/:name" element={<AttemptQuiz />} />
+          <Route path="/editQuiz" element={<EditQuiz />} />
+          <Route path="/editQuestion/:id" element={<EditQuestion />} />
+        </Routes>
+      </main>
+
+    </div>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../css/Logout.css";
 
 const Logout = () => {
   const [message, setMessage] = useState("");
@@ -34,10 +35,18 @@ const Logout = () => {
   }, [navigate]);
 
   return (
-    <div style={{ marginTop: "50px", textAlign: "center", fontSize: "18px" }}>
-      {message}
+  <div className="logout-page">
+    <div className="logout-card">
+      <div className="logout-icon">✓</div>
+      <h1>{message}</h1>
+      <p>
+        {message === "Logged Out Successfully!"
+          ? "Redirecting you to the login page..."
+          : "Redirecting..."}
+      </p>
     </div>
-  );
+  </div>
+);
 };
 
 export default Logout;

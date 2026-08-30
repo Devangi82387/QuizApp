@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../api/axios";
+import "../css/EditQuestion.css";
 
 const EditQuestion = () => {
   const { id } = useParams();
@@ -94,7 +95,7 @@ const EditQuestion = () => {
   };
 
   return (
-    <div id="main">
+    <div className="edit-question-page">
       <h3>Edit Question for Quiz: {quiz}</h3>
       {message && <div>{message}</div>}
 

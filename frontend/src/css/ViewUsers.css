@@ -1,0 +1,313 @@
+/* =========================================================
+   VIEW USERS PAGE
+   ========================================================= */
+
+.view-users-page {
+  min-height: calc(100vh - 72px);
+  padding: 50px 20px;
+
+  background: var(--bg-main);
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.view-users-container {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.view-users-header {
+  margin-bottom: 28px;
+}
+
+.view-users-header h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 30px;
+  font-weight: 700;
+
+  letter-spacing: -0.6px;
+}
+
+.view-users-header p {
+  margin-top: 5px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.view-users-message {
+  margin-bottom: 20px;
+
+  padding: 13px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--bg-card);
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   USERS CARD
+   ========================================================= */
+
+.users-card {
+  overflow: hidden;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.users-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 22px;
+
+  background: var(--bg-secondary);
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+
+/* =========================================================
+   USER LIST
+   ========================================================= */
+
+.users-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+/* =========================================================
+   USER ROW
+   ========================================================= */
+
+.users-list li {
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 22px;
+
+  border-bottom: 1px solid var(--border-light);
+
+  transition: var(--transition);
+}
+
+.users-list li:last-child {
+  border-bottom: none;
+}
+
+.users-list li:hover {
+  background: #fafbff;
+}
+
+
+/* =========================================================
+   USER INFO
+   ========================================================= */
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
+/* =========================================================
+   USER NUMBER
+   ========================================================= */
+
+.user-number {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   USERNAME
+   ========================================================= */
+
+.username {
+  color: var(--text-primary);
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ADMIN
+   ========================================================= */
+
+.admin-user {
+  background: #fafaff;
+}
+
+.admin-user .user-number {
+  background: var(--gradient-primary);
+  color: var(--text-white);
+}
+
+
+/* =========================================================
+   ADMIN BADGE
+   ========================================================= */
+
+.admin-badge {
+  padding: 4px 9px;
+
+  border-radius: 999px;
+
+  background: var(--primary-light);
+
+  color: var(--primary-hover);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+   ========================================================= */
+
+.delete-user-btn {
+  padding: 8px 14px;
+
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm);
+
+  background: var(--danger-light);
+
+  color: var(--danger);
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.delete-user-btn:hover {
+  background: #fecaca;
+
+  color: #b91c1c;
+
+  transform: translateY(-1px);
+}
+
+.delete-user-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .view-users-page {
+    padding: 30px 15px;
+  }
+
+  .view-users-header h1 {
+    font-size: 25px;
+  }
+
+  .users-card-header {
+    padding: 13px 15px;
+  }
+
+  .users-list li {
+    min-height: 62px;
+
+    padding: 10px 15px;
+  }
+
+  .user-info {
+    gap: 9px;
+  }
+
+  .user-number {
+    width: 30px;
+    height: 30px;
+  }
+
+  .username {
+    font-size: 14px;
+  }
+
+  .delete-user-btn {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+}

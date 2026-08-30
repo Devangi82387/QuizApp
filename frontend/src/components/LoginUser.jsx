@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
+import "../css/LoginUser.css";
+
 
 const LoginUser = () => {
   const [username, setUsername] = useState("");
@@ -44,7 +46,7 @@ const LoginUser = () => {
     <>
 
       <div id="main">
-        <br /><br /><br />
+        
 
         <form onSubmit={handleSubmit}>
           Username:
@@ -54,7 +56,7 @@ const LoginUser = () => {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
-          <br />
+        
 
           Password:
           <input
@@ -63,12 +65,12 @@ const LoginUser = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <br />
+          
 
           <button type="submit">Login</button>
         </form>
 
-        <br />
+      
         <div>{message}</div>
       </div>
     </>

@@ -1,0 +1,246 @@
+ /* =========================================================
+   EDITOR PAGE
+   ========================================================= */
+
+.editor-page {
+  min-height: calc(100vh - 72px);
+  padding: 45px 20px 60px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(99, 102, 241, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(139, 92, 246, 0.07),
+      transparent 30%
+    ),
+    var(--bg-main);
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.editor-page > div:first-child {
+  width: min(850px, 100%);
+  margin: 0 auto 20px;
+
+  padding: 13px 17px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--bg-card);
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.editor-page > h3 {
+  width: min(850px, 100%);
+  margin: 0 auto 20px;
+
+  color: var(--text-primary);
+
+  font-size: 28px;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.editor-page > hr {
+  width: min(850px, 100%);
+  margin: 0 auto 25px;
+
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   QUESTION LIST
+   ========================================================= */
+
+.editor-page > ol {
+  width: min(850px, 100%);
+  margin: 0 auto;
+
+  padding-left: 25px;
+}
+
+
+/* =========================================================
+   QUESTION CARD
+   ========================================================= */
+
+.editor-page > ol > li {
+  margin-bottom: 18px;
+  padding: 22px 24px;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+}
+
+.editor-page > ol > li:hover {
+  border-color: #c7d2fe;
+
+  box-shadow: var(--shadow-md);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   QUESTION TEXT
+   ========================================================= */
+
+.editor-page > ol > li b {
+  color: var(--text-primary);
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   QUESTION TYPE
+   ========================================================= */
+
+.editor-page > ol > li {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.editor-page > ol > li button {
+  margin-top: 14px;
+  margin-right: 8px;
+
+  padding: 8px 15px;
+
+  border-radius: var(--radius-sm);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+   ========================================================= */
+
+.editor-page > ol > li a button {
+  border: 1px solid #c7d2fe;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  box-shadow: none;
+}
+
+.editor-page > ol > li a button:hover {
+  background: #e0e7ff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+   ========================================================= */
+
+.editor-page > ol > li > button {
+  border: 1px solid #fecaca;
+
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.editor-page > ol > li > button:hover {
+  background: #fecaca;
+  color: #b91c1c;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   OPTIONS
+   ========================================================= */
+
+.editor-page > ol > li br + * {
+  color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   INNER DIVIDER
+   ========================================================= */
+
+.editor-page > ol > li hr {
+  margin-top: 18px;
+
+  border: none;
+  border-top: 1px solid var(--border-light);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.editor-page > div:last-child {
+  width: min(850px, 100%);
+  margin: 25px auto;
+
+  padding: 35px;
+
+  text-align: center;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  color: var(--text-secondary);
+
+  box-shadow: var(--shadow-sm);
+}
+
+

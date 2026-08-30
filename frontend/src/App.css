@@ -1,0 +1,504 @@
+/* =========================================================
+   QUIZGAME — GLOBAL THEME
+   ========================================================= */
+
+:root {
+
+  /* ================= BRAND ================= */
+
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-light: #eef2ff;
+
+  --secondary: #8b5cf6;
+  --secondary-hover: #7c3aed;
+
+
+  /* ================= BACKGROUND ================= */
+
+  --bg-main: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+
+  --bg-dark: #0f172a;
+  --bg-dark-secondary: #1e293b;
+
+
+  /* ================= TEXT ================= */
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+
+
+  /* ================= BORDER ================= */
+
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --border-focus: #6366f1;
+
+
+  /* ================= STATUS ================= */
+
+  --success: #16a34a;
+  --success-light: #dcfce7;
+
+  --danger: #dc2626;
+  --danger-light: #fee2e2;
+
+  --warning: #d97706;
+  --warning-light: #fef3c7;
+
+  --info: #2563eb;
+  --info-light: #dbeafe;
+
+
+  /* ================= GRADIENT ================= */
+
+  --gradient-primary:
+    linear-gradient(
+      135deg,
+      #6366f1 0%,
+      #8b5cf6 100%
+    );
+
+  --gradient-dark:
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #1e293b 100%
+    );
+
+
+  /* ================= SHADOW ================= */
+
+  --shadow-sm:
+    0 1px 3px rgba(15, 23, 42, 0.08);
+
+  --shadow-md:
+    0 8px 25px rgba(15, 23, 42, 0.08);
+
+  --shadow-lg:
+    0 20px 45px rgba(15, 23, 42, 0.12);
+
+  --shadow-primary:
+    0 8px 25px rgba(99, 102, 241, 0.25);
+
+
+  /* ================= RADIUS ================= */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+
+  /* ================= TRANSITIONS ================= */
+
+  --transition-fast: 0.15s ease;
+  --transition: 0.25s ease;
+  --transition-slow: 0.35s ease;
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  background: var(--bg-main);
+  color: var(--text-primary);
+
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   APP WRAPPER
+   ========================================================= */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   ROUTE CONTENT
+   ========================================================= */
+
+.app-content {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+   ========================================================= */
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   COMMON PAGE HEADER
+   ========================================================= */
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.page-title {
+  color: var(--text-primary);
+
+  font-size: 32px;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.page-description {
+  margin-top: 6px;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.card {
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border: none;
+  border-radius: var(--radius-sm);
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+
+/* Primary */
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--text-white);
+
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 30px rgba(99, 102, 241, 0.32);
+}
+
+
+/* Secondary */
+
+.btn-secondary {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: #e0e7ff;
+}
+
+
+/* Success */
+
+.btn-success {
+  background: var(--success-light);
+  color: #166534;
+}
+
+.btn-success:hover {
+  background: #bbf7d0;
+}
+
+
+/* Danger */
+
+.btn-danger {
+  background: var(--danger-light);
+  color: #991b1b;
+}
+
+.btn-danger:hover {
+  background: #fecaca;
+}
+
+
+/* Dark */
+
+.btn-dark {
+  background: var(--bg-dark);
+  color: var(--text-white);
+}
+
+.btn-dark:hover {
+  background: var(--bg-dark-secondary);
+}
+
+
+/* =========================================================
+   GLOBAL FORM BASE
+   ========================================================= */
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   COMMON BADGE
+   ========================================================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.badge-primary {
+  background: var(--primary-light);
+  color: #3730a3;
+}
+
+
+.badge-success {
+  background: var(--success-light);
+  color: #166534;
+}
+
+
+.badge-danger {
+  background: var(--danger-light);
+  color: #991b1b;
+}
+
+
+.badge-warning {
+  background: var(--warning-light);
+  color: #92400e;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.link {
+  color: var(--primary);
+
+  font-weight: 500;
+
+  transition: var(--transition-fast);
+}
+
+
+.link:hover {
+  color: var(--primary-hover);
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.divider {
+  width: 100%;
+  height: 1px;
+
+  background: var(--border);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   TEXT UTILITIES
+   ========================================================= */
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading {
+  min-height: 300px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   RESPONSIVE GLOBAL
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    width: 94%;
+  }
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .app-content {
+    min-height: calc(100vh - 60px);
+  }
+
+}

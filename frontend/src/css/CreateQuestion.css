@@ -1,0 +1,726 @@
+/* =========================================================
+   CREATE QUESTION PAGE
+   ========================================================= */
+
+.create-question-page {
+  min-height: calc(100vh - 70px);
+
+  padding: 45px 20px 70px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(99, 102, 241, 0.06),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(139, 92, 246, 0.06),
+      transparent 30%
+    ),
+    var(--bg-main);
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.create-question-container {
+  width: min(850px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.create-question-header {
+  margin-bottom: 25px;
+}
+
+.create-question-header h1 {
+  color: var(--text-primary);
+
+  font-size: 30px;
+  font-weight: 700;
+
+  letter-spacing: -0.6px;
+}
+
+.create-question-header p {
+  margin-top: 5px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.create-question-message {
+  margin-bottom: 20px;
+
+  padding: 12px 16px;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  background: var(--bg-card);
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   QUIZ CHECK CARD
+   ========================================================= */
+
+.quiz-check-card {
+  margin-bottom: 20px;
+
+  padding: 22px;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   FORM FIELD
+   ========================================================= */
+
+.cq-field {
+  margin-bottom: 20px;
+}
+
+.cq-field:last-child {
+  margin-bottom: 0;
+}
+
+.cq-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   INPUTS / SELECTS
+   ========================================================= */
+
+.cq-field input,
+.cq-field select,
+.quiz-check-row input,
+.cq-option-field input {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--bg-card);
+
+  color: var(--text-primary);
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: var(--transition);
+}
+
+.cq-field input::placeholder,
+.quiz-check-row input::placeholder,
+.cq-option-field input::placeholder {
+  color: var(--text-muted);
+}
+
+.cq-field input:focus,
+.cq-field select:focus,
+.quiz-check-row input:focus,
+.cq-option-field input:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================================
+   QUIZ CHECK ROW
+   ========================================================= */
+
+.quiz-check-row {
+  display: flex;
+
+  gap: 10px;
+}
+
+.quiz-check-row input {
+  flex: 1;
+}
+
+
+/* =========================================================
+   CHECK QUIZ BUTTON
+   ========================================================= */
+
+.check-quiz-btn {
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.check-quiz-btn:hover {
+  background: #e0e7ff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   QUESTION FORM
+   ========================================================= */
+
+.create-question-form {
+  padding: 30px;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.form-section-header {
+  margin-bottom: 25px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.form-section-header h2 {
+  color: var(--text-primary);
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.form-section-header p {
+  margin-top: 4px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   OPTIONS SECTION
+   ========================================================= */
+
+.options-section {
+  margin-top: 25px;
+
+  padding-top: 23px;
+
+  border-top: 1px solid var(--border);
+}
+
+.options-section h3,
+.correct-answer-section h3 {
+  margin-bottom: 15px;
+
+  color: var(--text-primary);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   OPTION FIELD
+   ========================================================= */
+
+.cq-option-field {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 10px;
+}
+
+.cq-option-field > span {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cq-option-field input {
+  flex: 1;
+}
+
+
+/* =========================================================
+   CORRECT ANSWER
+   ========================================================= */
+
+.correct-answer-section {
+  margin-top: 25px;
+
+  padding-top: 23px;
+
+  border-top: 1px solid var(--border);
+}
+
+.correct-options {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   CORRECT OPTION
+   ========================================================= */
+
+.correct-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 50px;
+
+  padding: 9px 12px;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--bg-card);
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.correct-option:hover {
+  border-color: #c7d2fe;
+
+  background: var(--primary-light);
+}
+
+.correct-option.selected {
+  border-color: #a5b4fc;
+
+  background: var(--primary-light);
+
+  color: var(--primary-hover);
+}
+
+.correct-option input {
+  width: 16px;
+  height: 16px;
+
+  accent-color: var(--primary);
+
+  cursor: pointer;
+}
+
+.correct-letter {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: var(--bg-secondary);
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.correct-option.selected .correct-letter {
+  background: var(--primary);
+
+  color: var(--text-white);
+}
+
+
+/* =========================================================
+   ADD QUESTION BUTTON
+   ========================================================= */
+
+.add-question-btn {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 13px 20px;
+
+  border: none;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--gradient-primary);
+
+  color: var(--text-white);
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow-primary);
+
+  transition: var(--transition);
+}
+
+.add-question-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(99, 102, 241, 0.30);
+}
+
+
+/* =========================================================
+   QUESTIONS LIST CARD
+   ========================================================= */
+
+.questions-list-card {
+  margin-top: 25px;
+
+  overflow: hidden;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   QUESTIONS HEADER
+   ========================================================= */
+
+.questions-list-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 22px 25px;
+
+  border-bottom: 1px solid var(--border);
+
+  background: var(--bg-secondary);
+}
+
+.questions-list-header h2 {
+  color: var(--text-primary);
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.questions-list-header p {
+  margin-top: 3px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+.question-count {
+  min-width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: var(--text-white);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-questions {
+  padding: 35px 20px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   QUESTION PREVIEW
+   ========================================================= */
+
+.question-preview {
+  padding: 22px 25px;
+
+  border-bottom: 1px solid var(--border-light);
+
+  transition: var(--transition);
+}
+
+.question-preview:last-child {
+  border-bottom: none;
+}
+
+.question-preview:hover {
+  background: #fafbff;
+}
+
+
+/* =========================================================
+   QUESTION TITLE
+   ========================================================= */
+
+.preview-question {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+}
+
+.preview-question > span {
+  padding: 4px 8px;
+
+  border-radius: 6px;
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.preview-question strong {
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PREVIEW OPTIONS
+   ========================================================= */
+
+.preview-options {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 8px;
+
+  padding-left: 43px;
+}
+
+.preview-options div {
+  padding: 9px 11px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 7px;
+
+  background: var(--bg-secondary);
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+.preview-options b {
+  margin-right: 7px;
+
+  color: var(--primary);
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .create-question-page {
+    padding: 30px 15px 50px;
+  }
+
+  .create-question-header h1 {
+    font-size: 25px;
+  }
+
+  .create-question-form {
+    padding: 22px 18px;
+  }
+
+  .quiz-check-card {
+    padding: 18px;
+  }
+
+  .quiz-check-row {
+    flex-direction: column;
+  }
+
+  .check-quiz-btn {
+    width: 100%;
+  }
+
+  .correct-options {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-options {
+    grid-template-columns: 1fr;
+
+    padding-left: 0;
+  }
+
+  .questions-list-header {
+    padding: 18px;
+  }
+
+  .question-preview {
+    padding: 18px;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .create-question-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .create-question-form {
+    padding: 18px 14px;
+  }
+
+  .cq-option-field {
+    gap: 7px;
+  }
+
+  .cq-option-field > span {
+    width: 30px;
+    height: 30px;
+  }
+
+}

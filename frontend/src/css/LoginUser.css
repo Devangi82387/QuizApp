@@ -1,0 +1,216 @@
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+#main {
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   LOGIN FORM CARD
+   ========================================================= */
+
+#main form {
+  width: 100%;
+  max-width: 400px;
+
+  padding: 40px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.08),
+    0 2px 6px rgba(15, 23, 42, 0.04);
+
+  color: #0f172a;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FORM TOP ACCENT
+   ========================================================= */
+
+#main form::before {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+  height: 4px;
+
+  margin: -40px auto 30px;
+
+  border-radius: 0 0 6px 6px;
+
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #8b5cf6
+  );
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+#main input {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 8px;
+  margin-bottom: 22px;
+
+  padding: 13px 14px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+
+/* Placeholder */
+
+#main input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* Focus */
+
+#main input:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+#main form button {
+  width: 100%;
+
+  margin-top: 4px;
+
+  padding: 13px 18px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #8b5cf6
+  );
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 15px rgba(99, 102, 241, 0.22);
+
+  transition: all 0.2s ease;
+}
+
+
+#main form button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 9px 20px rgba(99, 102, 241, 0.28);
+}
+
+
+#main form button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+#main > div {
+  width: 100%;
+  max-width: 400px;
+
+  margin-top: 16px;
+
+  padding: 11px 15px;
+
+  border-radius: 9px;
+
+  border: 1px solid #e2e8f0;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #main {
+    min-height: calc(100vh - 60px);
+
+    padding: 30px 16px;
+  }
+
+  #main form {
+    padding: 32px 24px;
+
+    border-radius: 15px;
+  }
+
+  #main form::before {
+    margin-top: -32px;
+  }
+
+}

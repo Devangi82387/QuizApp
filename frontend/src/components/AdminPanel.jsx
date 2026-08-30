@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "../css/AdminPanel.css";
 
 const AdminPanel = () => {
   const [message, setMessage] = useState("");
@@ -17,29 +18,56 @@ const AdminPanel = () => {
   }, [navigate]);
 
   return (
-    <>
-      <div id="main">
-        {message && <div>{message}</div>}
+    <div className="admin-page">
 
-        <br />
+      <div className="admin-container">
 
-        <Link to="/createQuiz">
-          <button>Create Quiz</button>
-        </Link>
+        <div className="admin-header">
+          <h1>Admin Panel</h1>
+          <p>Manage your QuizGame platform</p>
+        </div>
 
-        <Link to="/createQuestion">
-          <button>Create Question</button>
-        </Link>
+        {message && (
+          <div className="admin-message">
+            {message}
+          </div>
+        )}
 
-        <Link to="/editQuiz">
-          <button>Edit Quiz</button>
-        </Link>
+        <div className="admin-actions">
 
-        <Link to="/viewUsers">
-          <button>View Users</button>
-        </Link>
+          <Link to="/createQuiz">
+            <button className="admin-action primary-action">
+              <span>Create Quiz</span>
+              <span className="action-arrow">→</span>
+            </button>
+          </Link>
+
+          <Link to="/createQuestion">
+            <button className="admin-action">
+              <span>Create Question</span>
+              <span className="action-arrow">→</span>
+            </button>
+          </Link>
+
+          <Link to="/editQuiz">
+            <button className="admin-action">
+              <span>Edit Quiz</span>
+              <span className="action-arrow">→</span>
+            </button>
+          </Link>
+
+          <Link to="/viewUsers">
+            <button className="admin-action">
+              <span>View Users</span>
+              <span className="action-arrow">→</span>
+            </button>
+          </Link>
+
+        </div>
+
       </div>
-    </>
+
+    </div>
   );
 };
 

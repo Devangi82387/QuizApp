@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import api from "../api/axios"; 
+import api from "../api/axios";
+import "../css/ListQuizzes.css";
 
 const ListQuizzes = () => {
   const [data, setData] = useState([]);
@@ -8,6 +10,7 @@ const ListQuizzes = () => {
 
   useEffect(() => {
     const username = localStorage.getItem("username");
+
     if (!username) {
       setTimeout(() => navigate("/login"), 1500);
     } else {
@@ -26,9 +29,30 @@ const ListQuizzes = () => {
     }
   };
 
+  // Delete quiz
+  const deleteQuiz = async (quizName) => {
+    const confirmDelete = window.confirm(
+      `Are you sure you want to delete "${quizName}"?`
+    );
+
+    if (!confirmDelete) return;
+
+    try {
+      await api.delete(`/quiz/${encodeURIComponent(quizName)}`);
+
+      // Remove deleted quiz from the current list
+      setData((prev) =>
+        prev.filter((quiz) => quiz.name !== quizName)
+      );
+    } catch (error) {
+      console.error("Error deleting quiz:", error);
+    }
+  };
+
   // Handle genre button click
   const handleGenre = (genreId) => {
     let genre = "";
+
     switch (genreId) {
       case 1:
         genre = "All";
@@ -48,14 +72,17 @@ const ListQuizzes = () => {
       default:
         genre = "All";
     }
+
     fetchQuizzes(genre);
   };
 
   return (
-    <>
-      <div id="main" style={{ padding: "20px" }}>
-        <h3>List of Quizzes:</h3>
-        <div style={{ marginBottom: "10px" }}>
+    <div className="list-quizzes-page">
+      <div className="list-quizzes-card">
+
+        <h1>List of Quizzes</h1>
+
+        <div className="quiz-filters">
           <button onClick={() => handleGenre(1)}>All</button>
           <button onClick={() => handleGenre(2)}>Comics</button>
           <button onClick={() => handleGenre(3)}>Sports</button>
@@ -63,20 +90,35 @@ const ListQuizzes = () => {
           <button onClick={() => handleGenre(5)}>Other</button>
         </div>
 
-        <ul style={{ listStyleType: "decimal" }}>
+        <ul className="quiz-list">
           {data.length > 0 ? (
             data.map((quiz, index) => (
-              <li key={index}>
-                <Link to={`/attemptQuiz/${quiz.name}`}>{quiz.name}</Link>
+              <li key={index} className="quiz-item">
+
+                <Link to={`/attemptQuiz/${quiz.name}`}>
+                  {quiz.name}
+                </Link>
+
+                <button
+                  className="delete-quiz-btn"
+                  onClick={() => deleteQuiz(quiz.name)}
+                >
+                  Delete
+                </button>
+
               </li>
             ))
           ) : (
-            <li>No quizzes available</li>
+            <li className="no-quizzes">
+              No quizzes available
+            </li>
           )}
         </ul>
+
       </div>
-    </>
+    </div>
   );
 };
 
 export default ListQuizzes;
+

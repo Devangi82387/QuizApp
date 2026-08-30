@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
+import "../css/ViewUsers.css";
 
 const ViewUsers = () => {
   const [users, setUsers] = useState([]);
@@ -33,34 +34,89 @@ const ViewUsers = () => {
   const deleteUser = async (username) => {
     try {
       await api.delete(`user/delUser/${username}`);
-      fetchUsers(); // refresh list
+      fetchUsers();
     } catch (err) {
       alert("Failed to delete user");
     }
   };
 
   return (
-    <div id="main">
-      {message && <p>{message}</p>}
+    <div className="view-users-page">
 
-      {users.length > 0 && (
-        <ol>
-          {users.map((user, index) => (
-            <li key={index}>
-              {user.username}
+      <div className="view-users-container">
 
-              {user.username !== "admin" && (
-                <button
-                  style={{ marginLeft: "10px" }}
-                  onClick={() => deleteUser(user.username)}
+        <div className="view-users-header">
+          <h1>Registered Users</h1>
+          <p>Manage users registered on QuizGame</p>
+        </div>
+
+        {message && (
+          <div className="view-users-message">
+            {message}
+          </div>
+        )}
+
+        {users.length > 0 && (
+          <div className="users-card">
+
+            <div className="users-card-header">
+              <span>User</span>
+              <span>Action</span>
+            </div>
+
+            <ol className="users-list">
+
+              {users.map((user, index) => (
+
+                <li
+                  key={index}
+                  className={
+                    user.username === "admin"
+                      ? "admin-user"
+                      : ""
+                  }
                 >
-                  Delete
-                </button>
-              )}
-            </li>
-          ))}
-        </ol>
-      )}
+
+                  <div className="user-info">
+
+                    <span className="user-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="username">
+                      {user.username}
+                    </span>
+
+                    {user.username === "admin" && (
+                      <span className="admin-badge">
+                        ADMIN
+                      </span>
+                    )}
+
+                  </div>
+
+                  {user.username !== "admin" && (
+                    <button
+                      className="delete-user-btn"
+                      onClick={() =>
+                        deleteUser(user.username)
+                      }
+                    >
+                      Delete
+                    </button>
+                  )}
+
+                </li>
+
+              ))}
+
+            </ol>
+
+          </div>
+        )}
+
+      </div>
+
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../css/Home.css";
 
 const Home = () => {
   const [message, setMessage] = useState("Home");
@@ -18,7 +19,9 @@ const Home = () => {
   }, [navigate]);
 
   return (
-    <div>{message}</div>
+    <div className="home-page">
+      <h1>{message}</h1>
+    </div>
   );
 };
 

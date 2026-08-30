@@ -56,7 +56,7 @@ const RegisterUser = () => {
     <>
 
       <div id="main">
-        <br /><br /><br />
+       
 
         <form onSubmit={handleSubmit}>
           Username:
@@ -66,7 +66,7 @@ const RegisterUser = () => {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
-          <br />
+        
 
           Password:
           <input
@@ -75,12 +75,12 @@ const RegisterUser = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <br />
+         
 
           <button type="submit">Register</button>
         </form>
 
-        <br />
+       
         <div>{message}</div>
       </div>
     </>

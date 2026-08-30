@@ -1,0 +1,141 @@
+/* =========================================================
+   LOGOUT PAGE
+   ========================================================= */
+
+.logout-page {
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(99, 102, 241, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(139, 92, 246, 0.08),
+      transparent 30%
+    ),
+    var(--bg-main);
+}
+
+
+/* =========================================================
+   LOGOUT CARD
+   ========================================================= */
+
+.logout-card {
+  width: min(450px, 100%);
+
+  padding: 45px 35px;
+
+  text-align: center;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-xl);
+
+  box-shadow: var(--shadow-lg);
+
+  animation: logout-card-enter 0.35s ease;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.logout-icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 22px;
+
+  border-radius: 50%;
+
+  background: var(--success-light);
+
+  color: var(--success);
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.logout-card h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 25px;
+  font-weight: 700;
+
+  letter-spacing: -0.4px;
+}
+
+
+.logout-card p {
+  margin-top: 8px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes logout-card-enter {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .logout-page {
+    padding: 25px 15px;
+  }
+
+  .logout-card {
+    padding: 35px 22px;
+  }
+
+  .logout-card h1 {
+    font-size: 22px;
+  }
+
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../api/axios";
+import "../css/EditQuiz.css";
 
 const EditQuiz = () => {
   const [data, setData] = useState([]);
@@ -43,7 +44,7 @@ const EditQuiz = () => {
   };
 
   return (
-    <div id="main">
+    <div className="edit-quiz-page">
       <h3>List of Quizzes:</h3>
 
       <div>

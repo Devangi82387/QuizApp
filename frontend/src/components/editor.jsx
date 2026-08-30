@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import api from "../api/axios";
+import "../css/Editor.css";
 
 const Editor = () => {
   const { quizName } = useParams();
@@ -50,7 +51,7 @@ const Editor = () => {
   };
 
   return (
-    <div id="main">
+    <div className="editor-page">
       {message && <div>{message}</div>}
 
       <h3>Questions present in quiz '{quizName}'</h3>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
+import "../css/CreateQuiz.css";
 
 const CreateQuiz = () => {
   const navigate = useNavigate();
@@ -59,35 +60,48 @@ const CreateQuiz = () => {
   };
 
   return (
-    <div id="main">
-    
-      <form onSubmit={handleSubmit}>
-        <h3>Create Quiz</h3>
+  <div className="create-quiz-page">
 
-        <div>
-          <label>Quiz Name:</label>
-          <input
-            type="text"
-            value={quizName}
-            onChange={(e) => setQuizName(e.target.value)}
-          />
-        </div>
+    <form className="create-quiz-form" onSubmit={handleSubmit}>
 
-        <div>
-          <label>Genre:</label>
-          <select value={genre} onChange={(e) => setGenre(e.target.value)}>
-            <option value="Other">Other</option>
-            <option value="Comics">Comics</option>
-            <option value="History">History</option>
-            <option value="Sports">Sports</option>
-          </select>
-        </div>
+      <div className="create-quiz-header">
+        <h1>Create Quiz</h1>
+        <p>Create a new quiz and configure its scoring system.</p>
+      </div>
 
-        <h4>Marking Scheme</h4>
+      <div className="create-quiz-field">
+        <label>Quiz Name</label>
+        <input
+          type="text"
+          value={quizName}
+          onChange={(e) => setQuizName(e.target.value)}
+          placeholder="Enter quiz name"
+        />
+      </div>
 
-        <div>
-          <label>Marks for Correct Answer:</label>
-          <select value={mfc} onChange={(e) => setMfc(e.target.value)}>
+      <div className="create-quiz-field">
+        <label>Genre</label>
+        <select
+          value={genre}
+          onChange={(e) => setGenre(e.target.value)}
+        >
+          <option value="Other">Other</option>
+          <option value="Comics">Comics</option>
+          <option value="History">History</option>
+          <option value="Sports">Sports</option>
+        </select>
+      </div>
+
+      <div className="marking-section">
+
+        <h2>Marking Scheme</h2>
+
+        <div className="create-quiz-field">
+          <label>Marks for Correct Answer</label>
+          <select
+            value={mfc}
+            onChange={(e) => setMfc(e.target.value)}
+          >
             <option value="1">+1</option>
             <option value="2">+2</option>
             <option value="3">+3</option>
@@ -96,9 +110,12 @@ const CreateQuiz = () => {
           </select>
         </div>
 
-        <div>
-          <label>Marks for Incorrect Answer:</label>
-          <select value={mfi} onChange={(e) => setMfi(e.target.value)}>
+        <div className="create-quiz-field">
+          <label>Marks for Incorrect Answer</label>
+          <select
+            value={mfi}
+            onChange={(e) => setMfi(e.target.value)}
+          >
             <option value="0">0</option>
             <option value="1">-1</option>
             <option value="2">-2</option>
@@ -108,9 +125,12 @@ const CreateQuiz = () => {
           </select>
         </div>
 
-        <div>
-          <label>Marks for Unanswered:</label>
-          <select value={mfu} onChange={(e) => setMfu(e.target.value)}>
+        <div className="create-quiz-field">
+          <label>Marks for Unanswered</label>
+          <select
+            value={mfu}
+            onChange={(e) => setMfu(e.target.value)}
+          >
             <option value="0">0</option>
             <option value="1">-1</option>
             <option value="2">-2</option>
@@ -120,12 +140,25 @@ const CreateQuiz = () => {
           </select>
         </div>
 
-        <button type="submit">Add Quiz</button>
-      </form>
+      </div>
 
-      {message && <p>{message}</p>}
-    </div>
-  );
+      <button
+        type="submit"
+        className="create-quiz-submit"
+      >
+        Add Quiz
+      </button>
+
+    </form>
+
+    {message && (
+      <p className="create-quiz-message">
+        {message}
+      </p>
+    )}
+
+  </div>
+);
 };
 
 export default CreateQuiz;

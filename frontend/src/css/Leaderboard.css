@@ -1,0 +1,364 @@
+/* =========================================================
+   LEADERBOARD PAGE
+   ========================================================= */
+
+.leaderboard-page {
+  min-height: calc(100vh - 70px);
+
+  padding: 50px 20px;
+
+  background: var(--bg-main);
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.leaderboard-container {
+  width: min(1100px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.leaderboard-header {
+  margin-bottom: 32px;
+}
+
+.leaderboard-header h1 {
+  color: var(--text-primary);
+
+  font-size: 32px;
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+}
+
+.leaderboard-header p {
+  margin-top: 6px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.leaderboard-message {
+  margin-bottom: 24px;
+
+  padding: 13px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--bg-card);
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.leaderboard-section {
+  margin-bottom: 30px;
+
+  overflow: hidden;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.section-header {
+  padding: 22px 24px;
+
+  border-bottom: 1px solid var(--border);
+
+  background: var(--bg-card);
+}
+
+.section-header h2 {
+  color: var(--text-primary);
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.section-header p {
+  margin-top: 3px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+   ========================================================= */
+
+.table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.leaderboard-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 650px;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.leaderboard-table thead {
+  background: var(--bg-secondary);
+}
+
+.leaderboard-table th {
+  padding: 13px 18px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: left;
+
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+.leaderboard-table td {
+  padding: 16px 18px;
+
+  border-bottom: 1px solid var(--border-light);
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+}
+
+.leaderboard-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.leaderboard-table tbody tr {
+  transition: var(--transition);
+}
+
+.leaderboard-table tbody tr:hover {
+  background: #fafbff;
+}
+
+
+/* =========================================================
+   QUIZ NAME
+   ========================================================= */
+
+.quiz-name {
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SCORE COLORS
+   ========================================================= */
+
+.correct {
+  color: var(--success) !important;
+
+  font-weight: 650;
+}
+
+.incorrect {
+  color: var(--danger) !important;
+
+  font-weight: 650;
+}
+
+.unanswered {
+  color: var(--text-muted) !important;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FINAL SCORE
+   ========================================================= */
+
+.score {
+  color: var(--primary) !important;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   GLOBAL LEADERBOARD
+   ========================================================= */
+
+.global-table {
+  min-width: 500px;
+}
+
+
+/* =========================================================
+   RANK
+   ========================================================= */
+
+.rank {
+  width: 100px;
+
+  color: var(--text-secondary) !important;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   USER
+   ========================================================= */
+
+.leaderboard-user {
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   POINTS
+   ========================================================= */
+
+.points {
+  color: var(--primary) !important;
+
+  font-size: 15px !important;
+
+  font-weight: 750 !important;
+}
+
+
+/* =========================================================
+   CURRENT USER
+   ========================================================= */
+
+.current-user {
+  background: var(--primary-light);
+}
+
+.current-user:hover {
+  background: #e0e7ff !important;
+}
+
+
+/* =========================================================
+   YOU BADGE
+   ========================================================= */
+
+.you-badge {
+  display: inline-flex;
+
+  margin-left: 9px;
+
+  padding: 3px 7px;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+
+  color: var(--text-white);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+  padding: 45px 20px;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .leaderboard-page {
+    padding: 30px 15px;
+  }
+
+  .leaderboard-header h1 {
+    font-size: 27px;
+  }
+
+  .section-header {
+    padding: 18px;
+  }
+
+  .section-header h2 {
+    font-size: 17px;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 13px 14px;
+  }
+
+}

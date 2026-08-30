@@ -1,0 +1,123 @@
+.navbar {
+  width: 100%;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5%;
+
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* LOGO */
+
+.navbar-logo {
+  color: var(--text-primary);
+
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+
+  transition: var(--transition);
+}
+
+.navbar-logo:hover {
+  color: var(--primary);
+}
+
+
+/* LINKS */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+/* BUTTON */
+
+.navbar-links button {
+  border: none;
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  padding: 9px 13px;
+
+  border-radius: var(--radius-sm);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.navbar-links button:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+
+/* LOGIN */
+
+.navbar-links a:nth-child(2) button {
+  color: white;
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.navbar-links a:nth-child(2) button:hover {
+  color: white;
+  transform: translateY(-1px);
+}
+
+
+/* LOGOUT */
+
+.navbar-links a:nth-child(3) button:hover {
+  color: var(--danger);
+  background: var(--danger-light);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .navbar {
+    height: auto;
+    padding: 14px 4%;
+
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .navbar-links {
+    gap: 2px;
+  }
+
+  .navbar-links button {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+}

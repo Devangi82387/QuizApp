@@ -1,0 +1,154 @@
+/* =========================================================
+   EDIT QUIZ PAGE
+   ========================================================= */
+
+.edit-quiz-page {
+  min-height: calc(100vh - 72px);
+  padding: 50px 20px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(99, 102, 241, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(139, 92, 246, 0.07),
+      transparent 30%
+    ),
+    var(--bg-main);
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.edit-quiz-page > h3 {
+  width: min(850px, 100%);
+  margin: 0 auto 25px;
+
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
+
+
+/* =========================================================
+   GENRE BUTTONS
+   ========================================================= */
+
+.edit-quiz-page > div {
+  width: min(850px, 100%);
+  margin: 0 auto 28px;
+
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edit-quiz-page > div button {
+  padding: 10px 18px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  background: var(--bg-card);
+  color: var(--text-secondary);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+}
+
+.edit-quiz-page > div button:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary);
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   QUIZ LIST
+   ========================================================= */
+
+.edit-quiz-page > ul {
+  width: min(850px, 100%);
+  margin: 0 auto;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+/* =========================================================
+   QUIZ ITEM
+   ========================================================= */
+
+.edit-quiz-page > ul > li {
+  margin-bottom: 12px;
+
+  padding: 18px 22px;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+}
+
+.edit-quiz-page > ul > li:hover {
+  transform: translateY(-2px);
+
+  border-color: #c7d2fe;
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   QUIZ LINK
+   ========================================================= */
+
+.edit-quiz-page > ul > li a {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+  font-weight: 600;
+
+  transition: var(--transition);
+}
+
+.edit-quiz-page > ul > li:hover a {
+  color: var(--primary);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.edit-quiz-page > ul > li:last-child {
+  color: var(--text-secondary);
+}
+
+

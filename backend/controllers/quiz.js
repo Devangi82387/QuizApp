@@ -61,3 +61,20 @@ export const updateQuiz = async (req, res) => {
     quiz: updatedQuiz,
   });
 };
+
+export const deleteQuiz = async (req, res) => {
+  const quizName = req.params.name;
+
+  const [result] = await db.query(
+    "DELETE FROM quizzes WHERE name=?",
+    [quizName]
+  );
+
+  if (result.affectedRows === 0) {
+    return res.sendStatus(404);
+  }
+
+  res.json({
+    message: "Quiz deleted successfully",
+  });
+};

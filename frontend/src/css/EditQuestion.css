@@ -1,0 +1,274 @@
+/* =========================================================
+   EDIT QUESTION PAGE
+   ========================================================= */
+
+.edit-question-page {
+  min-height: calc(100vh - 72px);
+  padding: 45px 20px 60px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(99, 102, 241, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(139, 92, 246, 0.07),
+      transparent 30%
+    ),
+    var(--bg-main);
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.edit-question-page > form,
+.edit-question-page > h3,
+.edit-question-page > div,
+.edit-question-page > form {
+  width: min(700px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.edit-question-page > h3 {
+  margin-bottom: 24px;
+
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.edit-question-page > div {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--bg-card);
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.edit-question-page form {
+  padding: 30px;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.edit-question-page form > label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS & SELECT
+   ========================================================= */
+
+.edit-question-page form input[type="text"],
+.edit-question-page form select {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 7px;
+
+  padding: 12px 14px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  background: var(--bg-card);
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition: var(--transition);
+}
+
+.edit-question-page form input[type="text"]:focus,
+.edit-question-page form select:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================================
+   OPTION ROWS
+   ========================================================= */
+
+.edit-question-page form > div {
+  margin-bottom: 16px;
+  padding: 16px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--bg-secondary);
+
+  transition: var(--transition);
+}
+
+.edit-question-page form > div:hover {
+  border-color: #c7d2fe;
+  background: #fafaff;
+}
+
+
+/* =========================================================
+   OPTION LABEL
+   ========================================================= */
+
+.edit-question-page form > div > label:first-child {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   CORRECT CHECKBOX
+   ========================================================= */
+
+.edit-question-page form > div > label:last-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.edit-question-page input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+
+  margin: 0;
+
+  accent-color: var(--primary);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   UPDATE BUTTON
+   ========================================================= */
+
+.edit-question-page form button[type="submit"] {
+  width: 100%;
+
+  margin-top: 8px;
+
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: var(--radius-sm);
+
+  background: var(--gradient-primary);
+  color: var(--text-white);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow-primary);
+
+  transition: var(--transition);
+}
+
+.edit-question-page form button[type="submit"]:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 28px rgba(99, 102, 241, 0.30);
+}
+
+.edit-question-page form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .edit-question-page {
+    padding: 30px 15px 45px;
+  }
+
+  .edit-question-page > h3 {
+    font-size: 23px;
+  }
+
+  .edit-question-page form {
+    padding: 20px;
+  }
+
+  .edit-question-page form > div {
+    padding: 13px;
+  }
+
+}
